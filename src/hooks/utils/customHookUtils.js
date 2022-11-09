@@ -1,20 +1,25 @@
 export const getDataFetch = async (url) => {
-  const api = await fetch(url);
-  const data = await api.json();
-  if (!data) {
-    return {
-      ok: false,
-      message: "error firts IF",
-    };
-  }
-  if (data.status === "falure") {
-    return {
-      ok: false,
-      message: "error second IF getData",
-    };
-  }
+  try {
+    const api = await fetch(url);
+    const data = await api.json();
+    if (!data) {
+      return {
+        ok: false,
+        message: "Error Server 502",
+      };
+    }
+    if (data.status === "failure") {
+      return {
+        ok: false,
+        message:
+          "Problemas con el internet o has exedido el limite de peteciones al servidor",
+      };
+    }
 
-  return { ok: true, data: data };
+    return { ok: true, data: data };
+  } catch (e) {
+    return { ok: false, message: "error Server catch" };
+  }
 };
 
 export const checkLocalStorage = (groupName) => {

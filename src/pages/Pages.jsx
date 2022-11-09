@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./Home";
+import Home from "./home/Home";
 import DetailsRecipe from "./PdetailsRecipe/DetailsRecipe";
 import Queries from "./queries/Queries";
 import { AnimatePresence } from "framer-motion";

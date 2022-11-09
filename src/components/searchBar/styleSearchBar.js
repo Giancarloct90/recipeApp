@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
 
 export const InputText = styled.input`
   width: 100%;
@@ -36,4 +37,13 @@ export const SearchIcon = styled(BiSearchAlt)`
   left: 1.7rem;
   color: white;
   font-size: 2.4rem;
+`;
+
+export const CloseBtn = styled(AiOutlineClose)`
+  position: absolute;
+  top: 0.8rem;
+  right: 1.7rem;
+  color: white;
+  font-size: 2.4rem;
+  cursor: pointer;
 `;

@@ -1,4 +1,9 @@
-import { InputText, SearchBarContent, SearchIcon } from "./styleSearchBar";
+import {
+  InputText,
+  SearchBarContent,
+  SearchIcon,
+  CloseBtn,
+} from "./styleSearchBar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,6 +18,7 @@ const SearchBar = () => {
   return (
     <SearchBarContent onSubmit={SubmitTextSearch}>
       <SearchIcon />
+      {textInput && <CloseBtn onClick={() => setTextInput("")} />}
       <InputText
         type="text"
         value={textInput}

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { useState } from "react";
+import ErrorMessage from "../../components/erroMessage/ErrorMessage";
+import Loading from "../../components/loading/Loading";
 import {
   TitleDetails,
   DeatilsContent,
@@ -15,7 +17,7 @@ import { motion } from "framer-motion";
 const DetailsRecipe = () => {
   const parmas = useParams();
   const [activeBtn, setActiveBtn] = useState("Information");
-  const { data } = useFetch(
+  const { data, loading } = useFetch(
     `https://api.spoonacular.com/recipes/${parmas.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`,
     parmas.id,
     false
@@ -27,6 +29,7 @@ const DetailsRecipe = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
+      {!loading && <Loading />}
       {data && data.data && data.data.title && (
         <DeatilsContent>
           <TitleImage>
@@ -70,6 +73,13 @@ const DetailsRecipe = () => {
             )}
           </InfoIngredients>
         </DeatilsContent>
+      )}
+      {data.ok1 === false && (
+        <ErrorMessage
+          message={
+            "Revisa tu conexión a internet o ha superado el límete de consultas al servidor"
+          }
+        />
       )}
     </motion.div>
   );

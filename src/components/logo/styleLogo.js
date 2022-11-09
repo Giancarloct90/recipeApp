@@ -22,6 +22,11 @@ export const LogoContainer = styled(Link)`
 export const LogoContent = styled.div`
   border-radius: 50%;
   width: 10rem;
-  padding: 1rem 1rem;
+  height: 10rem;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fbf3ff;
 `;

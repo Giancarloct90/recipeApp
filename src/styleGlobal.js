@@ -15,14 +15,17 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   @media only screen and (max-width: 480px) {
-  html {
-    font-size: 35%;
+    html {
+      font-size: 42%;
+    }
   }
-}
 `;
 
 export const PagesContainer = styled.div`
   width: 85%;
   margin: 0 auto;
   margin-bottom: 5rem;
+  @media only screen and (max-width: 480px) {
+    width: 95%;
+  }
 `;

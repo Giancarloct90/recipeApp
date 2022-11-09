@@ -22,10 +22,9 @@ export const NavLinks = styled(NavLink)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   margin: 2rem;
-  padding: 2rem;
 
   svg {
     color: white;
